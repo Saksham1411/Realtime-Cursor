@@ -12,25 +12,16 @@ function App() {
       withCredentials: true,
     });
     setSocket(socket);
-    if (text.trim() != "") {
-      socket.emit("text", text);
-    }
-
-    
-    return ()=>{
-      console.log('close');
-      socket.close();
-    }
+    socket.emit("text", text);
   }, [text]);
 
   socket?.on("liveText", (msg) => {
-    console.log(msg);
     setLiveText(msg);
   });
   
   return (
     <div>
-      <input
+      <textarea
         type="text"
         value={liveText}
         onChange={(e) => setText(e.target.value)}
