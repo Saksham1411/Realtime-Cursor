@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
     console.log('connected',socket.id);
 
     socket.on('text',(msg)=>{
-        console.log(msg);
+        // console.log(msg);
         socket.broadcast.emit('liveText',msg);
     })
 

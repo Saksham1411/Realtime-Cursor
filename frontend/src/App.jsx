@@ -11,22 +11,23 @@ function App() {
       transports: ["websocket"],
       withCredentials: true,
     });
+    console.log(socket);
     setSocket(socket);
-    socket.emit("text", text);
-  }, [text]);
+  }, []);
+  
+  socket?.emit("text", text);
 
   socket?.on("liveText", (msg) => {
-    setLiveText(msg);
+    setText(msg);
   });
   
   return (
     <div>
       <textarea
         type="text"
-        value={liveText}
+        value={text}
         onChange={(e) => setText(e.target.value)}
       />
-      <div>{liveText}</div>
     </div>
   );
 }

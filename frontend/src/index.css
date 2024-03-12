@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+textarea{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 2rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    height: 85vh;
+    width: 85vw;
+}
